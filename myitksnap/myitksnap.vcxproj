@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9E050230-E987-403C-9F78-4EB9B78AD77F}</ProjectGuid>
+    <Keyword>QtVS_v303</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.18362.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <IncludePath>D:\ITK\Bin\include\ITK-5.1;D:\vtk\cmke-install-prefix\include\vtk-8.2;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\ITK\Bin\lib;D:\ITK\Bin\include\ITK-5.1;D:\vtk\cmke-install-prefix\include\vtk-8.2;D:\vtk\cmke-install-prefix\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Link>
+      <AdditionalDependencies>ITKBiasCorrection-5.1.lib;ITKOptimizersv4-5.1.lib;ITKColormap-5.1.lib;ITKPDEDeformableRegistration-5.1.lib;ITKCommon-5.1.lib;ITKPath-5.1.lib;ITKConvolution-5.1.lib;ITKPolynomials-5.1.lib;ITKDICOMParser-5.1.lib;ITKQuadEdgeMesh-5.1.lib;ITKDeformableMesh-5.1.lib;ITKQuadEdgeMeshFiltering-5.1.lib;ITKDenoising-5.1.lib;ITKRegionGrowing-5.1.lib;ITKDiffusionTensorImage-5.1.lib;ITKRegistrationMethodsv4-5.1.lib;ITKEXPAT-5.1.lib;ITKSmoothing-5.1.lib;ITKFFT-5.1.lib;ITKSpatialObjects-5.1.lib;ITKFastMarching-5.1.lib;ITKStatistics-5.1.lib;ITKIOBMP-5.1.lib;ITKTestKernel-5.1.lib;ITKIOBioRad-5.1.lib;ITKTransform-5.1.lib;ITKIOBruker-5.1.lib;ITKTransformFactory-5.1.lib;ITKIOCSV-5.1.lib;ITKVNLInstantiation-5.1.lib;ITKIOGDCM-5.1.lib;ITKVTK-5.1.lib;ITKIOGE-5.1.lib;ITKVideoCore-5.1.lib;ITKIOGIPL-5.1.lib;ITKVideoIO-5.1.lib;ITKIOHDF5-5.1.lib;ITKWatersheds-5.1.lib;ITKIOIPL-5.1.lib;ITKgiftiio-5.1.lib;ITKIOImageBase-5.1.lib;ITKniftiio-5.1.lib;ITKIOJPEG-5.1.lib;ITKznz-5.1.lib;ITKIOJPEG2000-5.1.lib;ITKIOLSM-5.1.lib;ITKIOMINC-5.1.lib;itkNetlibSlatec-5.1.lib;ITKIOMRC-5.1.lib;itkdouble-conversion-5.1.lib;ITKIOMeshBYU-5.1.lib;itkgdcmCommon-5.1.lib;ITKIOMeshBase-5.1.lib;itkgdcmDICT-5.1.lib;ITKIOMeshFreeSurfer-5.1.lib;itkgdcmDSED-5.1.lib;ITKIOMeshGifti-5.1.lib;itkgdcmIOD-5.1.lib;ITKIOMeshOBJ-5.1.lib;itkgdcmMEXD-5.1.lib;ITKIOMeshOFF-5.1.lib;itkgdcmMSFF-5.1.lib;ITKIOMeshVTK-5.1.lib;itkgdcmcharls-5.1.lib;ITKIOMeta-5.1.lib;itkgdcmjpeg12-5.1.lib;ITKIONIFTI-5.1.lib;itkgdcmjpeg16-5.1.lib;ITKIONRRD-5.1.lib;itkgdcmjpeg8-5.1.lib;ITKIOPNG-5.1.lib;itkgdcmopenjp2-5.1.lib;ITKIOSiemens-5.1.lib;itkgdcmsocketxx-5.1.lib;ITKIOSpatialObjects-5.1.lib;itkjpeg-5.1.lib;ITKIOStimulate-5.1.lib;itklbfgs-5.1.lib;ITKIOTIFF-5.1.lib;itkminc2-5.1.lib;ITKIOTransformBase-5.1.lib;itkopenjpeg-5.1.lib;ITKIOTransformHDF5-5.1.lib;itkpng-5.1.lib;ITKIOTransformInsightLegacy-5.1.lib;itksys-5.1.lib;ITKIOTransformMatlab-5.1.lib;itktestlib-5.1.lib;ITKIOVTK-5.1.lib;itktiff-5.1.lib;ITKIOXML-5.1.lib;itkv3p_netlib-5.1.lib;ITKImageFeature-5.1.lib;itkvcl-5.1.lib;ITKImageIntensity-5.1.lib;itkvnl-5.1.lib;ITKKLMRegionGrowing-5.1.lib;itkvnl_algo-5.1.lib;ITKLabelMap-5.1.lib;itkzlib-5.1.lib;ITKMarkovRandomFieldsClassifiers-5.1.lib;ITKMesh-5.1.lib;libitkhdf5_D.lib;ITKMetaIO-5.1.lib;libitkhdf5_cpp_D.lib;ITKNrrdIO-5.1.lib;ITKOptimizers-5.1.lib;vtkChartsCore-8.2.lib;vtkCommonColor-8.2.lib;vtkCommonComputationalGeometry-8.2.lib;vtkCommonCore-8.2.lib;vtkCommonDataModel-8.2.lib;vtkCommonExecutionModel-8.2.lib;vtkCommonMath-8.2.lib;vtkCommonMisc-8.2.lib;vtkCommonSystem-8.2.lib;vtkCommonTransforms-8.2.lib;vtkDICOMParser-8.2.lib;vtkDomainsChemistry-8.2.lib;vtkDomainsChemistryOpenGL2-8.2.lib;vtkFiltersAMR-8.2.lib;vtkFiltersCore-8.2.lib;vtkFiltersExtraction-8.2.lib;vtkFiltersFlowPaths-8.2.lib;vtkFiltersGeneral-8.2.lib;vtkFiltersGeneric-8.2.lib;vtkFiltersGeometry-8.2.lib;vtkFiltersHybrid-8.2.lib;vtkFiltersHyperTree-8.2.lib;vtkFiltersImaging-8.2.lib;vtkFiltersModeling-8.2.lib;vtkFiltersParallel-8.2.lib;vtkFiltersParallelImaging-8.2.lib;vtkFiltersPoints-8.2.lib;vtkFiltersProgrammable-8.2.lib;vtkFiltersSMP-8.2.lib;vtkFiltersSelection-8.2.lib;vtkFiltersSources-8.2.lib;vtkFiltersStatistics-8.2.lib;vtkFiltersTexture-8.2.lib;vtkFiltersTopology-8.2.lib;vtkFiltersVerdict-8.2.lib;vtkGUISupportQt-8.2.lib;vtkGUISupportQtSQL-8.2.lib;vtkGeovisCore-8.2.lib;vtkIOAMR-8.2.lib;vtkIOAsynchronous-8.2.lib;vtkIOCityGML-8.2.lib;vtkIOCore-8.2.lib;vtkIOEnSight-8.2.lib;vtkIOExodus-8.2.lib;vtkIOExport-8.2.lib;vtkIOExportOpenGL2-8.2.lib;vtkIOExportPDF-8.2.lib;vtkIOGeometry-8.2.lib;vtkIOImage-8.2.lib;vtkIOImport-8.2.lib;vtkIOInfovis-8.2.lib;vtkIOLSDyna-8.2.lib;vtkIOLegacy-8.2.lib;vtkIOMINC-8.2.lib;vtkIOMovie-8.2.lib;vtkIONetCDF-8.2.lib;vtkIOPLY-8.2.lib;vtkIOParallel-8.2.lib;vtkIOParallelXML-8.2.lib;vtkIOSQL-8.2.lib;vtkIOSegY-8.2.lib;vtkIOTecplotTable-8.2.lib;vtkIOVeraOut-8.2.lib;vtkIOVideo-8.2.lib;vtkIOXML-8.2.lib;vtkIOXMLParser-8.2.lib;vtkImagingColor-8.2.lib;vtkImagingCore-8.2.lib;vtkImagingFourier-8.2.lib;vtkImagingGeneral-8.2.lib;vtkImagingHybrid-8.2.lib;vtkImagingMath-8.2.lib;vtkImagingMorphological-8.2.lib;vtkImagingSources-8.2.lib;vtkImagingStatistics-8.2.lib;vtkImagingStencil-8.2.lib;vtkInfovisCore-8.2.lib;vtkInfovisLayout-8.2.lib;vtkInteractionImage-8.2.lib;vtkInteractionStyle-8.2.lib;vtkInteractionWidgets-8.2.lib;vtkLocalExample-8.2.lib;vtkNetCDF-8.2.lib;vtkParallelCore-8.2.lib;vtkRenderingAnnotation-8.2.lib;vtkRenderingContext2D-8.2.lib;vtkRenderingContextOpenGL2-8.2.lib;vtkRenderingCore-8.2.lib;vtkRenderingFreeType-8.2.lib;vtkRenderingGL2PSOpenGL2-8.2.lib;vtkRenderingImage-8.2.lib;vtkRenderingLOD-8.2.lib;vtkRenderingLabel-8.2.lib;vtkRenderingOpenGL2-8.2.lib;vtkRenderingQt-8.2.lib;vtkRenderingVolume-8.2.lib;vtkRenderingVolumeOpenGL2-8.2.lib;vtkTestingGenericBridge-8.2.lib;vtkTestingIOSQL-8.2.lib;vtkTestingRendering-8.2.lib;vtkViewsContext2D-8.2.lib;vtkViewsCore-8.2.lib;vtkViewsInfovis-8.2.lib;vtkViewsQt-8.2.lib;vtkdoubleconversion-8.2.lib;vtkexodusII-8.2.lib;vtkexpat-8.2.lib;vtkfreetype-8.2.lib;vtkgl2ps-8.2.lib;vtkglew-8.2.lib;vtkhdf5-8.2.lib;vtkhdf5_hl-8.2.lib;vtkjpeg-8.2.lib;vtkjsoncpp-8.2.lib;vtklibharu-8.2.lib;vtklibxml2-8.2.lib;vtklz4-8.2.lib;vtklzma-8.2.lib;vtkmetaio-8.2.lib;vtkogg-8.2.lib;vtkpng-8.2.lib;vtkproj-8.2.lib;vtkpugixml-8.2.lib;vtksqlite-8.2.lib;vtksys-8.2.lib;vtktheora-8.2.lib;vtktiff-8.2.lib;vtkverdict-8.2.lib;vtkzlib-8.2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>msvc201764</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>msvc201764</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UsePrecompiledHeader>Use</UsePrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <QtMoc>
+      <PrependInclude>stdafx.h;%(PrependInclude)</PrependInclude>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UsePrecompiledHeader>Use</UsePrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+    <QtMoc>
+      <PrependInclude>stdafx.h;%(PrependInclude)</PrependInclude>
+    </QtMoc>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <QtRcc Include="myitksnap.qrc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </QtRcc>
+    <QtUic Include="myitksnap.ui">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </QtUic>
+    <QtMoc Include="myitksnap.h" />
+    <ClCompile Include="myitksnap.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="ReadDicomSeries.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">Create</PrecompiledHeader>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
